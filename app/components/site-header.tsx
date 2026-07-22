@@ -116,16 +116,7 @@ export function SiteHeader({
           </div>
         </nav>
 
-        <Image
-          className="navbar-fringe"
-          src="/assets/navbar-strip-cropped.png"
-          alt=""
-          width={1957}
-          height={221}
-          sizes="100vw"
-          priority
-          aria-hidden="true"
-        />
+        <div className="navbar-fringe" aria-hidden="true" />
       </div>
 
       <nav
@@ -151,7 +142,6 @@ export function SiteHeader({
             aria-label={xIsLive ? "Open JIMSEM on X" : "JIMSEM X link coming soon"}
           >
             <XIcon aria-hidden="true" />
-            {xIsLive ? "X" : "X SOON"}
           </a>
           <a
             className="mobile-social-link mobile-social-link--telegram"
@@ -165,23 +155,10 @@ export function SiteHeader({
             }
           >
             <TelegramIcon aria-hidden="true" />
-            {telegramIsLive ? "TELEGRAM" : "TELEGRAM SOON"}
           </a>
         </div>
       </nav>
 
-      <div className="alert-ticker" aria-label="JIMSEM status ticker">
-        <div>
-          <span>SIGHTING CONFIRMED</span>
-          <span>$JIMSEM IS LOOSE</span>
-          <span>DO NOT MAKE EYE CONTACT</span>
-          <span>ZERO THOUGHTS, FULL SEND</span>
-          <span aria-hidden="true">SIGHTING CONFIRMED</span>
-          <span aria-hidden="true">$JIMSEM IS LOOSE</span>
-          <span aria-hidden="true">DO NOT MAKE EYE CONTACT</span>
-          <span aria-hidden="true">ZERO THOUGHTS, FULL SEND</span>
-        </div>
-      </div>
     </header>
   );
 }

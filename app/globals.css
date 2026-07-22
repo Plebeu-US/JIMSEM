@@ -124,6 +124,7 @@ svg {
 .navbar-wrap {
   position: relative;
   z-index: 2;
+  padding-bottom: 28px;
   background:
     linear-gradient(90deg, transparent 49.7%, rgb(9 10 13 / 6%) 50%, transparent 50.3%),
     var(--paper);
@@ -133,19 +134,20 @@ svg {
   position: relative;
   z-index: 3;
   display: flex;
-  width: min(calc(100% - 36px), var(--section-width));
-  min-height: 82px;
+  width: min(calc(100% - 64px), 1640px);
+  min-height: 88px;
   margin-inline: auto;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
+  gap: clamp(28px, 2.5vw, 48px);
 }
 
 .brand {
   display: inline-flex;
-  min-width: 235px;
+  min-width: 260px;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   transform: rotate(-1deg);
 }
 
@@ -193,9 +195,10 @@ svg {
 
 .desktop-nav {
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   justify-content: center;
-  gap: clamp(13px, 1.6vw, 30px);
+  gap: clamp(20px, 1.8vw, 36px);
 }
 
 .desktop-nav a {
@@ -228,9 +231,10 @@ svg {
 
 .navbar-actions {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 14px;
 }
 
 .icon-sticker {
@@ -320,12 +324,11 @@ svg {
   position: absolute;
   z-index: 2;
   right: 0;
-  bottom: -20px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 43px;
-  object-fit: cover;
-  object-position: center;
+  height: 36px;
+  background: url("/assets/navbar-fringe-pattern-v3.png") center / auto 36px repeat-x;
   pointer-events: none;
 }
 
@@ -356,15 +359,15 @@ svg {
 
 .mobile-nav__socials .mobile-social-link {
   display: inline-flex;
+  width: 50px;
+  height: 50px;
   min-height: 46px;
-  padding: 9px 13px;
+  padding: 0;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   border: 3px solid var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
   color: var(--white);
-  font-size: 0.95rem;
 }
 
 .mobile-social-link svg {
@@ -379,44 +382,6 @@ svg {
 .mobile-nav__socials .mobile-social-link--telegram {
   background: var(--telegram);
   color: var(--ink);
-}
-
-.alert-ticker {
-  position: relative;
-  z-index: 3;
-  overflow: hidden;
-  border-top: 3px solid var(--ink);
-  background: var(--ink);
-  color: var(--yellow);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
-
-.alert-ticker > div {
-  display: flex;
-  width: max-content;
-  animation: ticker 26s linear infinite;
-}
-
-.alert-ticker span {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 30px;
-}
-
-.alert-ticker span::after {
-  margin-left: 58px;
-  color: var(--red);
-  content: "✦";
-}
-
-@keyframes ticker {
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 .hero-section {
@@ -1333,16 +1298,17 @@ svg {
 }
 
 .social-button {
+  width: 64px;
+  height: 60px;
   min-height: 60px;
-  padding: 14px 22px 12px;
+  padding: 0;
   box-shadow: 6px 6px 0 var(--ink);
   color: var(--white);
-  font-size: 1.25rem;
 }
 
 .social-button svg {
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 27px;
 }
 
 .social-button--x {
@@ -1561,6 +1527,14 @@ svg {
 }
 
 @media (max-width: 1240px) {
+  .navbar {
+    gap: 24px;
+  }
+
+  .brand {
+    min-width: 235px;
+  }
+
   .desktop-nav {
     display: none;
   }
@@ -1688,9 +1662,14 @@ svg {
     width: min(calc(100% - 28px), var(--section-width));
   }
 
+  .navbar-wrap {
+    padding-bottom: 24px;
+  }
+
   .navbar {
     width: calc(100% - 24px);
     min-height: 74px;
+    gap: 16px;
   }
 
   .brand {
@@ -1718,8 +1697,9 @@ svg {
   }
 
   .navbar-fringe {
-    bottom: -17px;
-    height: 36px;
+    bottom: 0;
+    height: 32px;
+    background-size: auto 32px;
   }
 
   .hero-section {
@@ -1911,14 +1891,12 @@ svg {
     font-size: clamp(3.35rem, 17.5vw, 4.7rem);
   }
 
-  .hero-card__actions,
-  .community-actions {
+  .hero-card__actions {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .hero-card__actions .comic-button,
-  .community-actions .social-button {
+  .hero-card__actions .comic-button {
     width: 100%;
   }
 

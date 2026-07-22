@@ -383,18 +383,22 @@ export default function Home() {
                   href={xUrl}
                   target={xIsLive ? "_blank" : undefined}
                   rel={xIsLive ? "noreferrer" : undefined}
+                  aria-label={xIsLive ? "Open JIMSEM on X" : "JIMSEM X link coming soon"}
                 >
                   <XIcon aria-hidden="true" />
-                  {xIsLive ? "OPEN X" : "X COMING SOON"}
                 </a>
                 <a
                   className="social-button social-button--telegram"
                   href={telegramUrl}
                   target={telegramIsLive ? "_blank" : undefined}
                   rel={telegramIsLive ? "noreferrer" : undefined}
+                  aria-label={
+                    telegramIsLive
+                      ? "Open JIMSEM on Telegram"
+                      : "JIMSEM Telegram link coming soon"
+                  }
                 >
                   <TelegramIcon aria-hidden="true" />
-                  {telegramIsLive ? "ENTER TELEGRAM" : "TELEGRAM SOON"}
                 </a>
               </div>
               <small>
