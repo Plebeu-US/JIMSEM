@@ -1524,7 +1524,7 @@ svg {
   display: grid;
   min-height: 190px;
   padding: 38px 0;
-  grid-template-columns: auto minmax(260px, 1fr) auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 45px;
 }
@@ -1551,6 +1551,7 @@ svg {
 }
 
 .site-footer__inner > span {
+  justify-self: end;
   max-width: 250px;
   color: var(--yellow);
   font-family: var(--font-mono), monospace;
@@ -1635,15 +1636,6 @@ svg {
     max-width: 660px;
   }
 
-  .site-footer__inner {
-    grid-template-columns: auto 1fr;
-  }
-
-  .site-footer__inner > span {
-    grid-column: 1 / -1;
-    max-width: none;
-    text-align: left;
-  }
 }
 
 @media (max-width: 900px) {
@@ -1887,6 +1879,11 @@ svg {
   .site-footer__inner {
     grid-template-columns: 1fr;
     gap: 25px;
+  }
+
+  .site-footer__inner > span {
+    justify-self: start;
+    text-align: left;
   }
 }
 
