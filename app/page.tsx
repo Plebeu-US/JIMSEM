@@ -246,7 +246,6 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  poster="/assets/jimsem-hero.png"
                   preload="metadata"
                 >
                   <source src="/media/jimsem-live.webm" type="video/webm" />

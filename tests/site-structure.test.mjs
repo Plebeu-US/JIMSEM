@@ -54,6 +54,7 @@ test("includes a looping live player with a browser fallback", async () => {
 
   assert.match(page, /className="live-section"/);
   assert.match(page, /<video[\s\S]*autoPlay[\s\S]*controls[\s\S]*loop[\s\S]*muted[\s\S]*playsInline/);
+  assert.doesNotMatch(page, /<video[\s\S]*poster=/);
   assert.match(header, /\["LIVE", "#live"\]/);
   assert.ok(preferredSource >= 0, "the preferred live source should be configured");
   assert.ok(fallbackSource > preferredSource, "the fallback source should come second");
