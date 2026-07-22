@@ -1626,6 +1626,15 @@ svg {
     min-height: 440px;
   }
 
+  .sightings-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sightings-intro > p {
+    max-width: 660px;
+  }
+
   .site-footer__inner {
     grid-template-columns: auto 1fr;
   }
@@ -1634,6 +1643,47 @@ svg {
     grid-column: 1 / -1;
     max-width: none;
     text-align: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-adopt {
+    display: none;
+  }
+
+  .hero-card {
+    min-height: 850px;
+  }
+
+  .hero-card::after {
+    background: linear-gradient(
+      180deg,
+      var(--paper) 0%,
+      var(--paper) 46%,
+      rgb(245 240 230 / 90%) 55%,
+      transparent 75%
+    );
+  }
+
+  .hero-card__art {
+    inset: auto 0 0 !important;
+    height: 52% !important;
+    object-position: 67% center;
+  }
+
+  .hero-card__copy {
+    width: 100%;
+    padding: 42px 38px 310px;
+  }
+
+  .hero-card h1 {
+    font-size: clamp(4rem, 11vw, 6rem);
+  }
+
+  .hero-stamp {
+    top: auto;
+    right: 22px;
+    bottom: 170px;
   }
 }
 
@@ -1732,13 +1782,6 @@ svg {
     font-size: 1.2rem;
   }
 
-  .hero-specs {
-    right: auto;
-    bottom: 18px;
-    left: 18px;
-    justify-items: start;
-  }
-
   .contract-ribbon {
     width: calc(100% - 18px);
     grid-template-columns: 1fr auto;
@@ -1786,10 +1829,6 @@ svg {
     min-height: 220px;
   }
 
-  .token-stats dd {
-    font-size: clamp(1.8rem, 10vw, 3.2rem);
-  }
-
   .buy-heading-row {
     display: block;
   }
@@ -1829,6 +1868,18 @@ svg {
     width: min(92%, 430px);
   }
 
+  .sightings-grid {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .sighting-card,
+  .sighting-card:first-child,
+  .sighting-card:last-child {
+    transform: none;
+  }
+
   .final-cta {
     min-height: 650px;
   }
@@ -1845,7 +1896,18 @@ svg {
   }
 
   .hero-card__copy {
-    padding-inline: 18px;
+    padding: 30px 18px 260px;
+  }
+
+  .hero-card__art {
+    height: 42% !important;
+    object-position: 72% center;
+  }
+
+  .hero-stamp {
+    right: auto;
+    bottom: 138px;
+    left: 18px;
   }
 
   .hero-card h1 {
@@ -1871,18 +1933,9 @@ svg {
     max-width: none;
   }
 
-  .token-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .token-stats div,
-  .token-stats div:nth-child(even) {
-    border-right: 0;
-    border-bottom: 3px solid var(--ink);
-  }
-
-  .token-stats__wide {
-    grid-column: auto;
+  .tokenomics-poster {
+    box-shadow: 6px 6px 0 var(--ink);
+    transform: none;
   }
 
   .buy-steps li {

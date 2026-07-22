@@ -263,8 +263,8 @@ export default function Home() {
               <Image
                 src="/assets/jimsem-cat-shelter.png"
                 alt="JIMSEM wedged into a cat tree inside a chaotic animal shelter"
-                width={1536}
-                height={1024}
+                width={1586}
+                height={992}
                 sizes="(max-width: 980px) calc(100vw - 40px), 58vw"
               />
               <figcaption>
@@ -436,11 +436,6 @@ export default function Home() {
           <a className="footer-brand" href="#top" aria-label="Back to the top">
             JIMSEM <span>$JIMSEM</span>
           </a>
-          <p>
-            $JIMSEM is a meme token created for entertainment. No promises, no
-            guaranteed utility, and no financial advice. Do your own research —
-            and never give a raccoon your seed phrase.
-          </p>
           <span>© 2026 JIMSEM // UNLICENSED WILDLIFE ONCHAIN</span>
         </div>
       </footer>

@@ -9,7 +9,7 @@ const navLinks = [
   ["ANATOMY", "#anatomy"],
   ["GET $JIMSEM", "#get-jimsem"],
   ["JIMSEMAP", "#roadmap"],
-  ["MEMES", "#community"],
+  ["MEMES", "#sightings"],
 ] as const;
 
 export function SiteHeader({

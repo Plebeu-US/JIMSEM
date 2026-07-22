@@ -13,7 +13,11 @@ test("ships the finished JIMSEM experience instead of the starter", async () => 
 
   assert.match(page, /HALF JIMOTHY/);
   assert.match(page, /JOIN THE TRASH COUNCIL/);
+  assert.match(page, /WRONG HABITAT\. SAME GUY\./);
   assert.match(page, /aria-labelledby="hero-title"/);
+  assert.doesNotMatch(page, /A VERY SERIOUS INTERNET ANIMAL/);
+  assert.doesNotMatch(page, /FACE: CONCERNED|BODY: ROUND|PLAN: UNKNOWN/);
+  assert.doesNotMatch(page, /className="token-stats"/);
   assert.match(layout, /\$JIMSEM — Half Jimothy\. Half Raccoon\./);
   assert.doesNotMatch(page, /SkeletonPreview|Your site is taking shape/);
   assert.doesNotMatch(layout, /codex-preview|Starter Project/);
@@ -27,6 +31,9 @@ test("includes the required final artwork", async () => {
     "public/assets/jimsem-incident.png",
     "public/assets/navbar-strip-cropped.png",
     "public/assets/logo-cropped.png",
+    "public/assets/jimsem-birdfeeder.png",
+    "public/assets/jimsem-aquarium.png",
+    "public/assets/jimsem-cat-shelter.png",
     "public/og.png",
   ];
 
