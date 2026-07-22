@@ -85,3 +85,17 @@ test("includes the fast JIMSEM transformation loader", async () => {
     assert.ok(details.size > 10_000, `${filename} should be a real animation frame`);
   }
 });
+
+test("keeps the footer contract ready for a future address", async () => {
+  const [page, footerContract] = await Promise.all([
+    readFile(new URL("app/page.tsx", root), "utf8"),
+    readFile(new URL("app/components/footer-contract.tsx", root), "utf8"),
+  ]);
+
+  assert.match(page, /<FooterContract address=\{configuredContract \?\? ""\} isLive=\{contractIsLive\} \/>/);
+  assert.doesNotMatch(footerContract, /CONTRACT COMING SOON/);
+  assert.match(footerContract, /Contract address not available yet/);
+  assert.match(footerContract, /navigator\.clipboard\.writeText/);
+  assert.match(footerContract, /COPIED ✓/);
+  assert.doesNotMatch(page, /0x[a-fA-F0-9]{40}/);
+});

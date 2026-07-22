@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CopyContract } from "./components/copy-contract";
+import { FooterContract } from "./components/footer-contract";
 import { TelegramIcon, XIcon } from "./components/platform-icons";
 import { SiteHeader } from "./components/site-header";
 
@@ -501,6 +502,8 @@ export default function Home() {
           <span>© 2026 JIMSEM // UNLICENSED WILDLIFE ONCHAIN</span>
         </div>
       </footer>
+
+      <FooterContract address={configuredContract ?? ""} isLive={contractIsLive} />
     </div>
   );
 }
