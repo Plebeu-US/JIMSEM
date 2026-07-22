@@ -208,6 +208,64 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="live-section" id="live" aria-labelledby="live-title">
+          <div className="section-wrap live-layout">
+            <div className="live-copy">
+              <SectionTitle eyebrow="24/7 DUMPSTER SURVEILLANCE" light>
+                <span id="live-title">THE LIVE FEED</span>
+              </SectionTitle>
+              <p className="live-copy__lede">
+                A continuous field transmission from wherever JIMSEM should
+                absolutely not be. Keep one eye on the feed and the other on
+                your unattended snacks.
+              </p>
+              <div className="live-signal" aria-label="Broadcast status: on air">
+                <span aria-hidden="true" />
+                ON AIR — LOOPING EVIDENCE
+              </div>
+              <p className="live-copy__note">
+                SIGNAL MAY CONTAIN FUR, TRASH, AND UNEXPLAINED MARKET ACTIVITY.
+              </p>
+            </div>
+
+            <div className="live-player">
+              <div className="live-player__topbar" aria-hidden="true">
+                <span>JIMSEM FIELD UNIT // CAM 01</span>
+                <strong>
+                  <i /> ON AIR
+                </strong>
+              </div>
+
+              <div className="live-player__screen">
+                <video
+                  className="live-player__video"
+                  aria-label="JIMSEM live field transmission"
+                  autoPlay
+                  controls
+                  loop
+                  muted
+                  playsInline
+                  poster="/assets/jimsem-hero.png"
+                  preload="metadata"
+                >
+                  <source src="/media/jimsem-live.webm" type="video/webm" />
+                  <source src="/media/jimsem-live.mp4" type="video/mp4" />
+                  Your browser cannot display the live field transmission.
+                </video>
+                <div className="live-player__hud" aria-hidden="true">
+                  <span>REC</span>
+                  <span>CAM 01</span>
+                </div>
+              </div>
+
+              <div className="live-player__footer" aria-hidden="true">
+                <span>UNAUTHORIZED WILDLIFE TRANSMISSION</span>
+                <span>DO NOT TAP THE GLASS</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="anatomy-section" id="anatomy">
           <div className="section-wrap">
             <SectionTitle eyebrow="TOTALLY PEER-REVIEWED" light>

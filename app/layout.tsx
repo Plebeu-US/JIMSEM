@@ -4,6 +4,7 @@ import {
   Bangers,
   Space_Mono,
 } from "next/font/google";
+import { IntroLoader } from "./components/intro-loader";
 import "./globals.css";
 
 const displayFont = Bangers({
@@ -103,7 +104,10 @@ export default function RootLayout({
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <IntroLoader />
+        {children}
+      </body>
     </html>
   );
 }

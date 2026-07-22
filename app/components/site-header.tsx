@@ -6,6 +6,7 @@ import { TelegramIcon, XIcon } from "./platform-icons";
 
 const navLinks = [
   ["THE INCIDENT", "#incident"],
+  ["LIVE", "#live"],
   ["ANATOMY", "#anatomy"],
   ["GET $JIMSEM", "#get-jimsem"],
   ["JIMSEMAP", "#roadmap"],
