@@ -33,9 +33,6 @@ npm run build
 
 ```env
 NEXT_PUBLIC_SITE_URL=
-NEXT_PUBLIC_X_URL=
-NEXT_PUBLIC_TELEGRAM_URL=
-NEXT_PUBLIC_CONTRACT_ADDRESS=
 ```
 
 Os arquivos principais estão em `app/` e as imagens em `public/assets/`.

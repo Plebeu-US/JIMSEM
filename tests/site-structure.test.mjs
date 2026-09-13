@@ -87,16 +87,15 @@ test("includes the fast JIMSEM transformation loader", async () => {
   }
 });
 
-test("keeps the footer contract ready for a future address", async () => {
-  const [page, footerContract] = await Promise.all([
+test("keeps social marks decorative and removes contract controls", async () => {
+  const [page, header] = await Promise.all([
     readFile(new URL("app/page.tsx", root), "utf8"),
-    readFile(new URL("app/components/footer-contract.tsx", root), "utf8"),
+    readFile(new URL("app/components/site-header.tsx", root), "utf8"),
   ]);
 
-  assert.match(page, /<FooterContract address=\{configuredContract \?\? ""\} isLive=\{contractIsLive\} \/>/);
-  assert.doesNotMatch(footerContract, /CONTRACT COMING SOON/);
-  assert.match(footerContract, /Contract address not available yet/);
-  assert.match(footerContract, /navigator\.clipboard\.writeText/);
-  assert.match(footerContract, /COPIED ✓/);
-  assert.doesNotMatch(page, /0x[a-fA-F0-9]{40}/);
+  assert.doesNotMatch(`${page}\n${header}`, /NEXT_PUBLIC_(?:X_URL|TELEGRAM_URL|CONTRACT_ADDRESS)/);
+  assert.doesNotMatch(`${page}\n${header}`, /href=\{(?:xUrl|telegramUrl)\}/);
+  assert.doesNotMatch(page, /CopyContract|FooterContract|contract address/i);
+  assert.match(header, /icon-sticker--x[\s\S]*aria-hidden="true"/);
+  assert.match(header, /icon-sticker--telegram[\s\S]*aria-hidden="true"/);
 });

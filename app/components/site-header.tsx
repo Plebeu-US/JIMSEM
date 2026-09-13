@@ -13,17 +13,7 @@ const navLinks = [
   ["MEMES", "#sightings"],
 ] as const;
 
-export function SiteHeader({
-  xUrl,
-  telegramUrl,
-  xIsLive,
-  telegramIsLive,
-}: {
-  xUrl: string;
-  telegramUrl: string;
-  xIsLive: boolean;
-  telegramIsLive: boolean;
-}) {
+export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -76,28 +66,18 @@ export function SiteHeader({
           </div>
 
           <div className="navbar-actions">
-            <a
+            <span
               className="icon-sticker icon-sticker--x"
-              href={xUrl}
-              target={xIsLive ? "_blank" : undefined}
-              rel={xIsLive ? "noreferrer" : undefined}
-              aria-label={xIsLive ? "Follow JIMSEM on X" : "JIMSEM X link coming soon"}
+              aria-hidden="true"
             >
               <XIcon />
-            </a>
-            <a
+            </span>
+            <span
               className="icon-sticker icon-sticker--telegram"
-              href={telegramUrl}
-              target={telegramIsLive ? "_blank" : undefined}
-              rel={telegramIsLive ? "noreferrer" : undefined}
-              aria-label={
-                telegramIsLive
-                  ? "Join the JIMSEM Telegram"
-                  : "JIMSEM Telegram link coming soon"
-              }
+              aria-hidden="true"
             >
               <TelegramIcon />
-            </a>
+            </span>
             <a className="nav-adopt" href="#get-jimsem">
               ADOPT THE CREATURE
             </a>
@@ -135,28 +115,18 @@ export function SiteHeader({
           ADOPT THE CREATURE ↗
         </a>
         <div className="mobile-nav__socials">
-          <a
+          <span
             className="mobile-social-link mobile-social-link--x"
-            href={xUrl}
-            target={xIsLive ? "_blank" : undefined}
-            rel={xIsLive ? "noreferrer" : undefined}
-            aria-label={xIsLive ? "Open JIMSEM on X" : "JIMSEM X link coming soon"}
+            aria-hidden="true"
           >
             <XIcon aria-hidden="true" />
-          </a>
-          <a
+          </span>
+          <span
             className="mobile-social-link mobile-social-link--telegram"
-            href={telegramUrl}
-            target={telegramIsLive ? "_blank" : undefined}
-            rel={telegramIsLive ? "noreferrer" : undefined}
-            aria-label={
-              telegramIsLive
-                ? "Open JIMSEM on Telegram"
-                : "JIMSEM Telegram link coming soon"
-            }
+            aria-hidden="true"
           >
             <TelegramIcon aria-hidden="true" />
-          </a>
+          </span>
         </div>
       </nav>
 

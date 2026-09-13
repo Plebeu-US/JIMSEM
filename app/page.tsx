@@ -1,18 +1,6 @@
 import Image from "next/image";
-import { CopyContract } from "./components/copy-contract";
-import { FooterContract } from "./components/footer-contract";
 import { TelegramIcon, XIcon } from "./components/platform-icons";
 import { SiteHeader } from "./components/site-header";
-
-const configuredXUrl = process.env.NEXT_PUBLIC_X_URL?.trim();
-const configuredTelegramUrl = process.env.NEXT_PUBLIC_TELEGRAM_URL?.trim();
-const configuredContract = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS?.trim();
-const xUrl = configuredXUrl || "#community";
-const telegramUrl = configuredTelegramUrl || "#community";
-const contractAddress = configuredContract || "COMING SOON — VERIFY ON OFFICIALS";
-const xIsLive = Boolean(configuredXUrl);
-const telegramIsLive = Boolean(configuredTelegramUrl);
-const contractIsLive = Boolean(configuredContract);
 
 const anatomy = [
   {
@@ -57,7 +45,7 @@ const acquireSteps = [
   {
     number: "03",
     title: "FIND THE REAL $JIMSEM",
-    body: "Paste the verified contract. Impostor raccoons are common in this area.",
+    body: "Confirm the official project identity before making any move.",
     note: "CHECK TWICE",
   },
   {
@@ -127,12 +115,7 @@ export default function Home() {
         Skip to the incident
       </a>
 
-      <SiteHeader
-        xUrl={xUrl}
-        telegramUrl={telegramUrl}
-        xIsLive={xIsLive}
-        telegramIsLive={telegramIsLive}
-      />
+      <SiteHeader />
 
       <main id="main-content">
         <section className="hero-section" id="top" aria-labelledby="hero-title">
@@ -173,7 +156,6 @@ export default function Home() {
             </div>
           </div>
 
-          <CopyContract address={contractAddress} isLive={contractIsLive} />
         </section>
 
         <section className="incident-section paper-texture" id="incident">
@@ -362,7 +344,7 @@ export default function Home() {
               <a className="comic-button comic-button--ink" href="#community">
                 FIND THE OFFICIALS <span aria-hidden="true">↗</span>
               </a>
-              <p>No contract yet? Good. Never copy one from the replies.</p>
+              <p>Verify every source before trusting a raccoon in the replies.</p>
             </div>
           </div>
         </section>
@@ -436,32 +418,22 @@ export default function Home() {
                 to explain none of them.
               </p>
               <div className="community-actions">
-                <a
+                <span
                   className="social-button social-button--x"
-                  href={xUrl}
-                  target={xIsLive ? "_blank" : undefined}
-                  rel={xIsLive ? "noreferrer" : undefined}
-                  aria-label={xIsLive ? "Open JIMSEM on X" : "JIMSEM X link coming soon"}
+                  aria-hidden="true"
                 >
                   <XIcon aria-hidden="true" />
-                </a>
-                <a
+                </span>
+                <span
                   className="social-button social-button--telegram"
-                  href={telegramUrl}
-                  target={telegramIsLive ? "_blank" : undefined}
-                  rel={telegramIsLive ? "noreferrer" : undefined}
-                  aria-label={
-                    telegramIsLive
-                      ? "Open JIMSEM on Telegram"
-                      : "JIMSEM Telegram link coming soon"
-                  }
+                  aria-hidden="true"
                 >
                   <TelegramIcon aria-hidden="true" />
-                </a>
+                </span>
               </div>
               <small>
-                Official channel URLs can be set at deploy time. Trust the
-                website, not a raccoon in your DMs.
+                These channel marks are intentionally decorative. Trust verified
+                sources, not a raccoon in your DMs.
               </small>
             </div>
 
@@ -502,7 +474,6 @@ export default function Home() {
         </div>
       </footer>
 
-      <FooterContract address={configuredContract ?? ""} isLive={contractIsLive} />
     </div>
   );
 }
